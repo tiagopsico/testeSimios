@@ -12,5 +12,16 @@ public class Principal {
 		String devolve = "Hello World";
 		return "Projeto para verificacao de DNA de Simios";
 	}
+	
+	@RequestMapping("/true")
+	public boolean devolveTrue() {
+		return true;
+	}
+	
+	@RequestMapping("/letra")
+	public String letrasNaoConferem() {
+		return "As letras da String ​ só podem ser: (A, T, C, G)​";
+	}
+
 }
 
