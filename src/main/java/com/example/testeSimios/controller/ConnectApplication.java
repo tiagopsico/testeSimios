@@ -20,7 +20,10 @@ public class ConnectApplication {
         properties.load(ConnectApplication.class.getClassLoader().getResourceAsStream("application.properties"));
 
         log.info("Connecting to the database");
-        Connection connection = DriverManager.getConnection(properties.getProperty("url"), properties);
+        //Connection connection = DriverManager.getConnection(properties.getProperty("spring.datasource.url"), properties);
+        //String url ="jdbc:mysql://%s:%s/%s[?verifyServerCertificate=true&useSSL=true&requireSSL=true]",{your_host},{your_port},{your_database}"; myDbConn = DriverManager.getConnection(url, {username@servername}, {your_password}";
+        String url = "jdbc:mysql://testesimios.mysql.database.azure.com:3306/testesimios?serverTimezone=UTC"; 
+        Connection connection = DriverManager.getConnection( url, "meuadmin@testesimios", "admin123!");
         log.info("Database connection test: " + connection.getCatalog());
 /*
         log.info("Create database schema");
