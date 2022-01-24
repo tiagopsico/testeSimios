@@ -1,6 +1,6 @@
 package com.example.testeSimios.controller;
 
-import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
+//import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 
 import java.sql.*;
 import java.util.*;
@@ -22,7 +22,9 @@ public class ConnectApplication {
         log.info("Connecting to the database");
         //Connection connection = DriverManager.getConnection(properties.getProperty("spring.datasource.url"), properties);
         //String url ="jdbc:mysql://%s:%s/%s[?verifyServerCertificate=true&useSSL=true&requireSSL=true]",{your_host},{your_port},{your_database}"; myDbConn = DriverManager.getConnection(url, {username@servername}, {your_password}";
-        String url = "jdbc:mysql://testesimios.mysql.database.azure.com:3306/testesimios?serverTimezone=UTC"; 
+        //String url = "jdbc:mysql://testesimios.mysql.database.azure.com:3306/testesimios?serverTimezone=UTC"; 
+        String url = "jdbc:mysql://34.151.236.69:3306/testesimios?serverTimezone=UTC";
+        //p738320695384-dojrtm@gcp-sa-cloud-sql.iam.gserviceaccount.com
         Connection connection = DriverManager.getConnection( url, "meuadmin@testesimios", "admin123!");
         log.info("Database connection test: " + connection.getCatalog());
 /*
@@ -44,7 +46,7 @@ public class ConnectApplication {
 
         log.info("Closing database connection");
         connection.close();
-        AbandonedConnectionCleanupThread.uncheckedShutdown();
+        //AbandonedConnectionCleanupThread.uncheckedShutdown();
     }
 
 	
